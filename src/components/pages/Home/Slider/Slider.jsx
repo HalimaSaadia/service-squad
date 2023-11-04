@@ -2,10 +2,10 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Slider = () => {
   return (
-    <div className="carousel w-full relative -top-20 border ">
-      <div id="slide1" className="carousel-item relative  w-full">
+    <div className="carousel w-full relative -top-20 ">
+      <div id="slide1" className="carousel-item relative  h-[500px] md:h-[600px] w-full">
         <div
-          className="hero max-h-[600px]"
+          className="hero  "
           style={{
             backgroundImage:
               "url(https://media.istockphoto.com/id/1316432905/photo/cleaning-home.webp?b=1&s=170667a&w=0&k=20&c=nnr5UkGpEkW7yM1jpJ1XJZ1V-yQiYJLE0ar9ViuTCjI=)",
@@ -14,7 +14,7 @@ const Slider = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="text-white">
-              <h1 className="mb-5 text-5xl font-bold">
+             <h1 className="mb-5 text-2xl md:text-5xl font-bold">
                 <Typewriter
                 loop={false}
                   typeSpeed={40}
@@ -22,7 +22,9 @@ const Slider = () => {
                     "Experience a spotless home without lifting a finger. Our cleaning services are thorough, reliable, and tailored to your needs",
                   ]}
                 />
-              </h1>
+              </h1> 
+              
+              
             </div>
           </div>
         </div>
@@ -47,7 +49,7 @@ const Slider = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="text-white">
-              <h1 className="mb-5 text-5xl font-bold">
+              <h1 className="mb-5 text-2xl md:text-5xl font-bold">
                 <Typewriter
                   typeSpeed={40}
                   loop={false}
@@ -79,7 +81,7 @@ const Slider = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="text-white">
-              <h1 className="mb-5 text-5xl font-bold">
+              <h1 className="mb-5 text-2xl md:text-5xl font-bold">
                 <Typewriter
                   typeSpeed={40}
                   loop={false}

@@ -1,14 +1,30 @@
-import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { BiSolidUser } from "react-icons/bi";
-import Button from "../Button";
-import "./navbar.css"
+
+import "./navbar.css";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   console.log(user?.photoURL);
-  const links = <></>;
+
+  const handleLogout = () => {
+    logout()
+      .then((result) => {
+        toast.success("Successfully Logged Out");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.message,
+        });
+      });
+  };
+
   return (
     <div
       style={{ backgroundImage: "url('https://svgshare.com/i/zHf.svg')" }}
@@ -46,11 +62,13 @@ const Navbar = () => {
                 </li>
                 <li>
                   {user ? (
-                    <button className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
-                      <NavLink className={(isActive) => false} ><span className="text-white">Logout</span></NavLink>
+                    <button onClick={()=> handleLogout()} className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
+                      <NavLink className={(isActive) => false}>
+                        <span className="text-white">Logout</span>
+                      </NavLink>
                     </button>
                   ) : (
-                    <NavLink>Login</NavLink>
+                    <NavLink to="/login">Login</NavLink>
                   )}
                 </li>
                 <li>
@@ -73,7 +91,6 @@ const Navbar = () => {
               {/* <img src="https://i.postimg.cc/XN8HCx5g/Untitled-design.png" alt="" /> */}
               <p className=" normal-case text-xl">ServiceSquad</p>
             </div>
-           
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -83,28 +100,33 @@ const Navbar = () => {
               <li>
                 <NavLink to="/services">Services</NavLink>
               </li>
-              {user &&  <li tabIndex={0}>
-                <details>
-                  <summary className="text-base font-bold">Dashboard</summary>
-                  <ul className="px-2">
-                    <li>
-                      <NavLink to="my-services">My Services</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="add-services">Add Services</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="my-schedules">My Schedules</NavLink>
-                    </li>
-                  </ul>
-                </details>
-              </li>}
-             
+              {user && (
+                <li tabIndex={0}>
+                  <details>
+                    <summary className="text-base font-bold">Dashboard</summary>
+                    <ul className="px-2">
+                      <li>
+                        <NavLink to="my-services">My Services</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="add-services">Add Services</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="my-schedules">My Schedules</NavLink>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              )}
+
               <li>
                 {user ? (
-                    <button className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24"> <NavLink to="#" className={(isActive) => false}><span className="text-white">Logout</span></NavLink></button>
-                   
-               
+                  <button onClick={()=> handleLogout()} className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
+                    {" "}
+                    <NavLink to="#" className={(isActive) => false}>
+                      <span className="text-white">Logout</span>
+                    </NavLink>
+                  </button>
                 ) : (
                   <NavLink to="/login">Login</NavLink>
                 )}
