@@ -60,17 +60,7 @@ const Navbar = () => {
                 <li>
                   <NavLink to="/services">Services</NavLink>
                 </li>
-                <li>
-                  {user ? (
-                    <button onClick={()=> handleLogout()} className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
-                      <NavLink className={(isActive) => false}>
-                        <span className="text-white">Logout</span>
-                      </NavLink>
-                    </button>
-                  ) : (
-                    <NavLink to="/login">Login</NavLink>
-                  )}
-                </li>
+             
                 <li>
                   <NavLink to="#">Dashboard</NavLink>
                   <ul className="p-2">
@@ -83,7 +73,19 @@ const Navbar = () => {
                     <li>
                       <NavLink to="my-schedules">My Schedules</NavLink>
                     </li>
+
                   </ul>
+                </li>
+                <li className="mt-5">
+                  { user ? (
+                    <button onClick={()=> handleLogout()} className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
+                      <NavLink className={(isActive) => "false"}>
+                        <span className="text-white">Logout</span>
+                      </NavLink>
+                    </button>
+                  ) : (
+                    <NavLink to="/login">Login</NavLink>
+                  )}
                 </li>
               </ul>
             </div>
@@ -123,7 +125,7 @@ const Navbar = () => {
                 {user ? (
                   <button onClick={()=> handleLogout()} className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
                     {" "}
-                    <NavLink to="#" className={(isActive) => false}>
+                    <NavLink to="#" className={(isActive) => "false"}>
                       <span className="text-white">Logout</span>
                     </NavLink>
                   </button>
