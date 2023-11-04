@@ -1,0 +1,12 @@
+.active{
+    background-color: transparent!important;
+    background-image: linear-gradient(to bottom, #EE0D26 , #FBD32C);
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    -webkit-text-fill-color: transparent;
+}
+
+ul li a{
+    font-size: medium;
+    font-weight: bolder;
+}

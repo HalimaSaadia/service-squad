@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.textPrimary{
+    background-image: linear-gradient(to bottom, #2B4D7A , #3F77B3, #73D5E2, #81E68A, #3F77B3 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px 0;
+}
+
+.bgPrimary{
+    background-image: linear-gradient(to bottom, #2B4D7A , #3F77B3, #73D5E2, #81E68A, #3F77B3 );
+}
+
+.borderStyle{
+    border-image: linear-gradient(to right, #2B4D7A , #3F77B3, #73D5E2, #81E68A,  #3F77B3 ) 1;
+}
+.borderStyleRed{
+    border-image: linear-gradient( #EE0D26 ,  #FBD32C ) ;
+    border-width: 2px;
+}
