@@ -6,7 +6,7 @@
     background-image: linear-gradient(to bottom, #2B4D7A , #3F77B3, #73D5E2, #81E68A, #3F77B3 );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding: 10px 0;
+
 }
 .textSecondary{
     background-image: linear-gradient(to bottom, #EE0D26 , #FBD32C );
@@ -14,13 +14,13 @@
     -webkit-text-fill-color: transparent;
 }
 .bgPrimary{
-    background-image: linear-gradient(to bottom, #2B4D7A , #3F77B3, #73D5E2, #81E68A, #3F77B3 );
+    background-image: linear-gradient(to right, #2B4D7A , #3F77B3, #73D5E2, #81E68A, #3F77B3 );
 }
 
 .borderStyle{
     border-image: linear-gradient(to right, #2B4D7A , #3F77B3, #73D5E2, #81E68A,  #3F77B3 ) 1;
 }
 .borderStyleRed{
-    border-image: linear-gradient( #EE0D26 ,  #FBD32C ) ;
-    border-width: 2px;
+    border-image: linear-gradient(to right, #EE0D26 ,  #FBD32C ) 1 ;
+
 }

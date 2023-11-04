@@ -10,3 +10,7 @@ ul li a{
     font-size: medium;
     font-weight: bolder;
 }
+
+.navbarBackground{
+    background-image: linear-gradient(to right, rgba(43, 77, 122, 0.5), rgba(63, 119, 179, 0.5), rgba(115, 213, 226, 0.5), rgba(129, 230, 138, 0.5), rgba(63, 119, 179, 0.5));
+}
