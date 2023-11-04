@@ -48,6 +48,11 @@ const AuthProvider = ({children}) => {
             if(currentUser){
                 axiosInstance.post("/api/v1/jwt", {email})
                 .then(res => console.log(res.data))
+                .catch(error => console.log(error))
+            }else{
+                axiosInstance.post("/api/v1/logout", {email})
+                .then(res => console.log(res.data))
+                .catch(error => console.log(error))
             }
             setUser(currentUser)
             setLoading(false)
