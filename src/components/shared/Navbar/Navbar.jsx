@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div
       style={{ backgroundImage: "url('https://svgshare.com/i/zHf.svg')" }}
-      className=" bg-no-repeat bg-cover "
+      className=" bg-no-repeat bg-cover sticky top-0 z-50 borderStyle border-b-2 "
     >
       <div className="bg-[#80808080]">
         <div className="navbar max-w-7xl mx-auto ">
