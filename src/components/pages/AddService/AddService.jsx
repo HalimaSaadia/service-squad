@@ -3,11 +3,16 @@ import Button from "../../shared/Button";
 import SectionHeading from "../../shared/SectionHeading";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useAxios from "../../../Hooks/useAxios";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const AddService = () => {
     const {user} = useContext(AuthContext)
+ 
     const [photoURL, setPhotoURL] = useState("https://media.istockphoto.com/id/673723668/photo/handsome-auto-service-workers.webp?b=1&s=170667a&w=0&k=20&c=kQ5lo8bZZd0eyGy__W_5m6yKzU1XzXhjXGJqfBeYC8w=")
-    console.log(photoURL)
+  
+    const axiosInstance = useAxios()
 
   const handleAddService = (e) => {
     e.preventDefault();
@@ -19,17 +24,36 @@ const AddService = () => {
     const price = e.target.price.value;
     const serviceArea = e.target.serviceArea.value;
     const description = e.target.description.value;
+    const providerPhoto = user?.photoURL
     const service = {
         servicePhoto,
         serviceName,
         providerName,
+        providerPhoto,
         email,
         price,
         serviceArea,
         description,
     }
+    const toastId = toast.loading("Loading...");
+    axiosInstance.post("/api/vi/add-service", service)
+    .then(res => {
+        const result = res.data
+        Swal.fire({
+            icon: "success",
+            title: "Successfully added Service"
+        })
+        toast.remove(toastId)
+    })
+    .catch(error => {
+        Swal.fire({
+            icon: "error",
+            title: "Ooops",
+            text: error.message
+        })
+    })
 
-    console.log(service)
+    form.reset()
   };
   return (
     <div className="py-10 max-w-6xl mx-auto ">
