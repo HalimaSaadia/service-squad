@@ -89,7 +89,7 @@ const Register = () => {
                   type="text"
                   placeholder="Enter Your Name"
                   name="name"
-                  className="bg-transparent input input-bordered border-0 border-b-2 rounded-none borderStyle focus:outline-none"
+                  className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
                   required
                 />
               </div>
@@ -98,7 +98,7 @@ const Register = () => {
                   type="email"
                   placeholder="Email"
                   name="email"
-                  className="bg-transparent input input-bordered border-0 border-b-2 rounded-none borderStyle focus:outline-none"
+                  className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
                   required
                 />
               </div>
@@ -107,7 +107,7 @@ const Register = () => {
                   type={isOpen ? "text" : "password"}
                   placeholder="Password"
                   name="password"
-                  className="bg-transparent input input-bordered border-0 border-b-2 rounded-none borderStyle focus:outline-none"
+                  className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
                   required
                 />
                 <div
@@ -127,7 +127,7 @@ const Register = () => {
                   type="url"
                   placeholder="Photo URL"
                   name="photo"
-                  className="bg-transparent input input-bordered border-0 border-b-2 rounded-none borderStyle focus:outline-none"
+                  className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
                   required
                 />
               </div>

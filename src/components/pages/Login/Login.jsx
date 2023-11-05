@@ -76,7 +76,7 @@ const Login = () => {
                   type="email"
                   placeholder="email"
                   name="email"
-                  className="bg-transparent input input-bordered border-0 border-b-2 rounded-none borderStyle focus:outline-none"
+                  className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
                   required
                 />
               </div>
@@ -88,7 +88,7 @@ const Login = () => {
                   type={isOpen ? "text" : "password"}
                   placeholder="Password"
                   name="password"
-                  className="bg-transparent input input-bordered border-0 border-b-2 rounded-none borderStyle focus:outline-none"
+                  className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
                   required
                 />
                 <div

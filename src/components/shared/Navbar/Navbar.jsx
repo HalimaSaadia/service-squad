@@ -65,13 +65,13 @@ const Navbar = () => {
                   <NavLink to="#">Dashboard</NavLink>
                   <ul className="p-2">
                     <li>
-                      <NavLink to="my-services">My Services</NavLink>
+                      <NavLink to="/my-services">My Services</NavLink>
                     </li>
                     <li>
-                      <NavLink to="add-services">Add Services</NavLink>
+                      <NavLink to="/add-service">Add Services</NavLink>
                     </li>
                     <li>
-                      <NavLink to="my-schedules">My Schedules</NavLink>
+                      <NavLink to="/my-schedules">My Schedules</NavLink>
                     </li>
 
                   </ul>
@@ -108,13 +108,13 @@ const Navbar = () => {
                     <summary className="text-base font-bold">Dashboard</summary>
                     <ul className="px-2">
                       <li>
-                        <NavLink to="my-services">My Services</NavLink>
+                        <NavLink to="/my-services">My Services</NavLink>
                       </li>
                       <li>
-                        <NavLink to="add-services">Add Services</NavLink>
+                        <NavLink to="/add-service">Add Services</NavLink>
                       </li>
                       <li>
-                        <NavLink to="my-schedules">My Schedules</NavLink>
+                        <NavLink to="/my-schedules">My Schedules</NavLink>
                       </li>
                     </ul>
                   </details>

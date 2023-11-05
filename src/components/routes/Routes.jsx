@@ -3,6 +3,7 @@ import Home from "../pages/Home/Home/Home";
 import Root from "../layout/Root";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import AddService from "../pages/AddService/AddService";
 
 const router = createBrowserRouter([
     {
@@ -12,16 +13,21 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />
+            },
+            {
+                path: "/add-service",
+                element: <AddService />
+            },
+            {
+                path: "/login",
+                element: <Login />
+            },
+            {
+                path:"/register",
+                element: <Register />
             }
         ]
-    },
-    {
-        path: "/login",
-        element: <Login />
-    },
-    {
-        path:"/register",
-        element: <Register />
     }
+    
 ])
 export default router
