@@ -4,17 +4,15 @@ import Button from "../../../shared/Button";
 const PopularServiceCard = ({service}) => {
   const {servicePhoto, serviceName, serviceArea, providerPhoto, providerName, price, description} = service
   return (
-    <div className="card lg:card-side rounded-none border bg-base-100  shadow-xl lg:h-80">
+    <div className="card lg:card-side rounded-none border bg-base-100  shadow-xl lg:max-h-64 xl:h-72">
       <figure className="lg:flex-1">
-     
           <img
             src={servicePhoto}
             className="h-full w-full"
             alt="Album"
           />
-    
       </figure>
-      <div className="card-body lg:flex-1">
+      <div className="card-body lg:flex-1 lg:py-2 pl-0 lg:pl-10">
         <h2 className="card-title font-bold">{serviceName}</h2>
         <div className="flex  gap-2">
           <div className="avatar">
@@ -35,7 +33,8 @@ const PopularServiceCard = ({service}) => {
        
 
         <div className="card-actions">
-          <Button text="Details"/>
+          <button className="borderStyle border-2 px-10 py-3   bg-slate-100"> Details</button>
+          {/* <Button text="Details"/> */}
         </div>
       </div>
     </div>
