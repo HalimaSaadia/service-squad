@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <div>
+      <div className="max-w-7xl mx-auto">
         <PopularServices />
       </div>
     </div>

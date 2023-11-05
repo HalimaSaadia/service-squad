@@ -2,7 +2,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Slider = () => {
   return (
-    <div className="carousel w-full relative -top-20 ">
+    <div className="carousel w-full relative ">
       <div id="slide1" className="carousel-item relative  h-[500px] md:h-[600px] w-full">
         <div
           className="hero  "

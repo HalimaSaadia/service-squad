@@ -1,38 +1,41 @@
 import React from "react";
+import Button from "../../../shared/Button";
 
-const PopularServiceCard = () => {
+const PopularServiceCard = ({service}) => {
+  const {servicePhoto, serviceName, serviceArea, providerPhoto, providerName, price, description} = service
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl lg:h-96">
+    <div className="card lg:card-side rounded-none border bg-base-100  shadow-xl lg:h-80">
       <figure className="lg:flex-1">
      
           <img
-            src="https://plus.unsplash.com/premium_photo-1677681803908-1d2404bd24dc?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3dlZXBlcnxlbnwwfHwwfHx8MA%3D%3D"
-            className="object-cover h-56 md:h-96 w-full lg:h-full"
+            src={servicePhoto}
+            className="h-full w-full"
             alt="Album"
           />
     
       </figure>
       <div className="card-body lg:flex-1">
-        <h2 className="card-title">New album is released!</h2>
-        <p className="flex-grow-0">
-          Revolutionary software that streamlines workflows and boosts
-          productivity for businesses of all sizes.
-        </p>
+        <h2 className="card-title font-bold">{serviceName}</h2>
         <div className="flex  gap-2">
           <div className="avatar">
             <div className="w-12 mask mask-squircle">
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src={providerPhoto} />
             </div>
           </div>
           <div>
-            <p>Provider</p>
-            <p>Halima Tus Sadia</p>
+            <p className="font-bold">Provider</p>
+            <p>{providerName}</p>
           </div>
         </div>
-        <p>$: Price</p>
+        <p className="flex-grow-0">
+          {description}
+        </p>
+        <p className="">$:{price}</p>
+      
+       
 
         <div className="card-actions">
-          <button className="btn btn-primary">Listen</button>
+          <Button text="Details"/>
         </div>
       </div>
     </div>
