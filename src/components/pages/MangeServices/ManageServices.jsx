@@ -8,18 +8,19 @@ const ManageServices = () => {
   const [services, setServices] = useState([]);
   const axiosInstance = useAxios();
   const { user } = useContext(AuthContext);
-  console.log(user?.email === "halimasaadiya66@gmail.com")
+  console.log(user?.email)
+
 
   useEffect(() => {
     axiosInstance
-      .get(`/api/vi/services?email=${user?.email}`)
+      .get(`/api/v1/user-services?email=${user?.email}`)
       .then((res) => {
         console.log(res.data);
         setServices(res.data);
         console.log(`/api/v1/user-services?email=${user?.email}`)
       });
-  }, [user,services]);
-  console.log(services)
+  }, [services]);
+
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -32,17 +33,17 @@ const ManageServices = () => {
        
        <div className="flex flex-col justify-center ">
        <h1 className="card-title text-2xl mx-auto  md:text-4xl">{user?.displayName}</h1>
-       <h1 className="card-title text-2xl mx-auto  md:text-4xl textPrimary">MANAGE YOUR SERVICES</h1>
+       <h1 className="card-title text-2xl mx-auto  md:text-4xl textPrimary"> {services.length ? "MANAGE YOUR SERVICES": "You are not providing any service"} </h1>
        </div>
        
        
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    { services && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {services?.map((service) => (
-          <ManageServiceCard key={service._id} service={service} />
+          <ManageServiceCard services={services} setServices={setServices} key={service._id} service={service} />
         ))}
-      </div>
+      </div>}
     </div>
   );
 };

@@ -60,7 +60,7 @@ const AuthProvider = ({children}) => {
 
         return ()=> unSubscribe()
     },[])
-    console.log(user)
+
     const value = {loading, user, createUser, updateUser, login, loginWithGoogle, logout}
     return (
         <AuthContext.Provider value={value}>
