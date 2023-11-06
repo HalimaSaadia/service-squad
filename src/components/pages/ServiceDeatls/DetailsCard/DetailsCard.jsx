@@ -30,14 +30,18 @@ const DetailsCard = ({ service }) => {
             <p>{providerName}</p>
           </div>
         </div>
-        <p className="flex-grow-0">
-          {description}
-        </p>
+        <p className="flex-grow-0">{description}</p>
         <p className="">$:{price}</p>
-       
-      
+
         <div className="card-actions">
-          <button onClick={()=>document.getElementById('my_modal_3').showModal()} className="borderStyle border-2 px-10 py-3 w-full  bg-slate-100"> Book Now</button>
+          <button
+            onClick={() => document.getElementById("my_modal_3").showModal()}
+            className="borderStyle border-2 px-10 py-3 w-full  bg-slate-100"
+          >
+            {" "}
+            Book Now
+          </button>
+          
           <BookingForm service={service} />
           {/* <Button text="Details"/> */}
         </div>

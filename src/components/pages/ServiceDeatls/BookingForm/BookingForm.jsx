@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import Button from "../../../shared/Button";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import useAxios from "../../../../Hooks/useAxios";
+import toast, { ToastBar, Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const BookingForm = ({ service }) => {
+  const axiosInstance = useAxios()
   const {
     _id,
     servicePhoto,
@@ -14,11 +18,15 @@ const BookingForm = ({ service }) => {
     email,
   } = service;
   const { user } = useContext(AuthContext);
+  
+
+
   const handleBookService = (e) => {
     e.preventDefault();
     const form = e.target;
     const instruction = form.instruction.value;
     const serviceTakingDate = form.date.value;
+    const toastId = toast.loading("loading...")
 
     const bookedService = {
       serviceName,
@@ -28,19 +36,28 @@ const BookingForm = ({ service }) => {
       serviceTakingDate,
       instruction,
       price,
-    };
-    console.log(bookedService)
+    }
+
+    axiosInstance.post("/api/v1/add-booking", bookedService)
+    .then(res => {
+
+      toast.success("successFully booked")
+      toast.remove(toastId)
+      console.log(res.data)
+    })
+    .catch(error => {
+      console.log(error.message)
+      toast.remove(toastId)
+    })
+    
+    form.instruction.value= ""
+    form.date.value=""
   };
   
   return (
     <>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
-      <button
-        className="btn"
-        onClick={() => document.getElementById("my_modal_3").showModal()}
-      >
-        open modal
-      </button>
+   
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box p-0 rounded-none">
           <div
@@ -51,7 +68,7 @@ const BookingForm = ({ service }) => {
               <div className=" h-full p-0 flex flex-col justify-center items-center ">
                 {/* <SectionHeading text="Add Service" /> */}
                 <div className="card flex-shrink-0 w-full rounded-none ">
-                  <form className="card-body " onSubmit={handleBookService}>
+                  <form method="dialog" className="card-body "  onSubmit={handleBookService}>
                     <div className="form-control">
                       <input
                         type="text"
@@ -126,7 +143,7 @@ const BookingForm = ({ service }) => {
                       />
                     </div>
 
-                    <div className="form-control mt-6">
+                    <div className="form-control mt-6 btn bg-transparent border-none hover:bg-transparent">
                       <Button text="Confirm purchase" />
                     </div>
                   </form>
@@ -142,6 +159,7 @@ const BookingForm = ({ service }) => {
             </button>
           </form>
         </div>
+       
       </dialog>
     </>
   );
