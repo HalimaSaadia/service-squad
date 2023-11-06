@@ -1,4 +1,5 @@
 import {AiFillDelete, AiFillEdit} from "react-icons/ai"
+import { useNavigate } from "react-router-dom";
 const ManageServiceCard = ({service}) => {
       const {
     _id,
@@ -10,6 +11,8 @@ const ManageServiceCard = ({service}) => {
     price,
     description,
   } = service;
+
+  const navigate = useNavigate()
   return (
     <div className="card card-compact rounded-none borderStyle border bg-base-100 shadow-xl">
       <figure>
@@ -28,7 +31,7 @@ const ManageServiceCard = ({service}) => {
       </div>
       <div className="card-actions">
           <button className="btn borderStyle border bg-slate-100 border-b-0 border-l-0 rounded-none flex-1"> <AiFillDelete className="text-red-500 text-2xl" /> Delete </button>
-          <button  className="btn borderStyle border bg-slate-100 border-b-0 border-r-0 rounded-none flex-1"> <AiFillEdit className="text-2xl" />Buy Now</button>
+          <button onClick={()=> navigate(`/update-service/${_id}`)} className="btn borderStyle border bg-slate-100 border-b-0 border-r-0 rounded-none flex-1"> <AiFillEdit className="text-2xl" />Edit Service</button>
         </div>
     </div>
   );

@@ -9,6 +9,7 @@ import ServiceDetails from "../pages/ServiceDeatls/ServiceDetails/ServiceDetails
 import axios from "axios";
 import useAxios from "../../Hooks/useAxios";
 import ManageServices from "../pages/MangeServices/ManageServices";
+import UpdateService from "../pages/UpdateService/UpdateService";
 
 
 
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
             {
                 path: "/my-services",
                 element: <ManageServices />,
+            },
+            {
+                path: "/update-service/:id",
+                element: <UpdateService />,
+                loader: ({params}) => axios.get(`http://localhost:5000/api/v1/service/${params.id}`, {withCredentials: true})
             },
             {
                 path: "/login",
