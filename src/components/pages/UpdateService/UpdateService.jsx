@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Button from "../../shared/Button";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
@@ -20,19 +20,15 @@ const UpdateService = () => {
   } = loadedService;
 
   const { user } = useContext(AuthContext);
-
-  const [photoURL, setPhotoURL] = useState(
-    servicePhoto
-  );
-
+  const [photoURL, setPhotoURL] = useState(servicePhoto)
   const axiosInstance = useAxios();
+  const navigate = useNavigate()
 
   const handleAddService = (e) => {
     e.preventDefault();
     const form = e.target;
     const newServicePhoto = form.servicePhoto.value;
     const newServiceName = form.serviceName.value;
-    const newProviderName = form.providerName.value;
     const newEmail = form.email.value;
     const newPrice = form.price.value;
     const newServiceArea = form.serviceArea.value;
@@ -42,7 +38,7 @@ const UpdateService = () => {
     const newService = {
       servicePhoto:newServicePhoto ,
       serviceName: newServiceName,
-      providerName: newProviderName,
+      providerName: providerName,
       providerPhoto:providerPhoto,
       email:newEmail ,
       price: newPrice,
@@ -50,26 +46,36 @@ const UpdateService = () => {
       description:newDescription,
     };
     console.log(newService)
-    // const toastId = toast.loading("Loading...");
-    // axiosInstance
-    //   .patch("/api/vi/add-service", newService)
-    //   .then((res) => {
-    //     const result = res.data;
-    //     Swal.fire({
-    //       icon: "success",
-    //       title: "Successfully added Service",
-    //     });
-    //     toast.remove(toastId);
-    //   })
-    //   .catch((error) => {
-    //     Swal.fire({
-    //       icon: "error",
-    //       title: "Ooops",
-    //       text: error.message,
-    //     });
-    //   });
+    const toastId = toast.loading("Loading...");
+    axiosInstance
+      .put(`/api/vi/update-service/${_id}`, newService)
+      .then((res) => {
+        const result = res.data;
+        if(result.modifiedCount > 0){
+          Swal.fire({
+            icon: "success",
+            title: "Successfully Updated Service",
+          });
+        }else{
+          Swal.fire({
+            icon: "info",
+            title: "You update nothing",
+          });
+        }
+       
+        toast.remove(toastId);
+        // navigate(`/service-details/${_id}`)
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Ooops",
+          text: error.message,
+        });
+        toast.remove(toastId)
+      });
 
-    // form.reset();
+    
   };
   return (
     <div className="py-10 max-w-6xl mx-auto ">
@@ -119,7 +125,7 @@ const UpdateService = () => {
                       type="text"
                       name="providerName"
                       placeholder="provider Name"
-                      defaultValue={user?.displayName}
+                      defaultValue={providerName}
                       className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none "
                       required
                       readOnly

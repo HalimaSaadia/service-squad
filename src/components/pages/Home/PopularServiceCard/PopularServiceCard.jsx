@@ -27,7 +27,7 @@ const PopularServiceCard = ({service}) => {
           </div>
         </div>
         <p className="flex-grow-0">
-          {description}
+          {description.slice(0,50)} {description.length > 50 && "..."}
         </p>
         <p className="">$:{price}</p>
       

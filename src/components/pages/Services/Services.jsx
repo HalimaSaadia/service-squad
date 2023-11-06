@@ -77,7 +77,7 @@ console.log(displayServices)
               <ServiceCard key={service._id} service={service} />
             ))
           : displayServices
-              ?.slice(0, 6)
+              ?.slice(0,displayServices.length)
               .map((service) => (
                 <ServiceCard key={service._id} service={service} />
               ))}

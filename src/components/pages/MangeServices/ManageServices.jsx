@@ -8,15 +8,18 @@ const ManageServices = () => {
   const [services, setServices] = useState([]);
   const axiosInstance = useAxios();
   const { user } = useContext(AuthContext);
+  console.log(user?.email === "halimasaadiya66@gmail.com")
 
   useEffect(() => {
     axiosInstance
-      .get(`/api/v1/user-services?email=${user?.email}`)
+      .get(`/api/vi/services?email=${user?.email}`)
       .then((res) => {
         console.log(res.data);
         setServices(res.data);
+        console.log(`/api/v1/user-services?email=${user?.email}`)
       });
-  }, [services]);
+  }, [user,services]);
+  console.log(services)
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -36,7 +39,7 @@ const ManageServices = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {services.map((service) => (
+        {services?.map((service) => (
           <ManageServiceCard key={service._id} service={service} />
         ))}
       </div>

@@ -30,7 +30,7 @@ const ServiceCard = ({ service }) => {
           </div>
         </div>
         <p className="flex-grow-0">
-          {description}
+          {description?.slice(0,50)}{description?.length > 50 && "..."}
         </p>
         <p className="flex-grow-0">$:{price}</p>
         <p className="flex-grow"><span className="font-bold">Service Area</span>:{serviceArea}</p>
