@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ServiceCard = ({ service }) => {
+const DetailsCard = ({ service }) => {
   const {
     _id,
     servicePhoto,
@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
     description,
   } = service;
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl md:p-10 rounded-none lg:h-96  border-2 ">
+    <div className="card lg:card-side bg-base-100 shadow-xl md:p-10 rounded-none   border-2 ">
       <figure className="lg:flex-1 ">
         <img src={servicePhoto} className="w-full h-full  md:p-0" alt="Album" />
       </figure>
@@ -32,11 +32,11 @@ const ServiceCard = ({ service }) => {
         <p className="flex-grow-0">
           {description}
         </p>
-        <p className="flex-grow-0">$:{price}</p>
-        <p className="flex-grow"><span className="font-bold">Service Area</span>:{serviceArea}</p>
+        <p className="">$:{price}</p>
+       
       
         <div className="card-actions">
-          <Link to={`/service-details/${_id}`}><button className="borderStyle border-2 px-10 py-3 w-full  bg-slate-100"> Details</button></Link>
+          <Link to={`/service-details/${_id}`}><button className="borderStyle border-2 px-10 py-3 w-full  bg-slate-100"> Book Now</button></Link>
           {/* <Button text="Details"/> */}
         </div>
       </div>
@@ -44,4 +44,4 @@ const ServiceCard = ({ service }) => {
   );
 };
 
-export default ServiceCard;
+export default DetailsCard;
