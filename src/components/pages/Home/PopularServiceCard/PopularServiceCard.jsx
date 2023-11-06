@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "../../../shared/Button";
+import { Link } from "react-router-dom";
 
 const PopularServiceCard = ({service}) => {
-  const {servicePhoto, serviceName, serviceArea, providerPhoto, providerName, price, description} = service
+  const {_id, servicePhoto, serviceName, serviceArea, providerPhoto, providerName, price, description} = service
   return (
     <div className="card lg:card-side rounded-none border bg-base-100  shadow-xl lg:max-h-64 xl:h-72">
       <figure className="lg:flex-1">
@@ -33,7 +34,7 @@ const PopularServiceCard = ({service}) => {
        
 
         <div className="card-actions">
-          <button className="borderStyle border-2 px-10 py-3   bg-slate-100"> Details</button>
+          <Link to={`/service-details/${_id}`}><button className="borderStyle border-2 px-10 py-3   bg-slate-100"> Details</button></Link>
           {/* <Button text="Details"/> */}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxios from "../../../Hooks/useAxios";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "../../shared/ServiceCard/ServiceCard";
 import SectionHeading from "../../shared/SectionHeading";
 import Button from "../../shared/Button";
 
