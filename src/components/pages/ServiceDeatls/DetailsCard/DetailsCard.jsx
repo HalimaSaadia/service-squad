@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BookingForm from "../BookingForm/BookingForm";
 
 const DetailsCard = ({ service }) => {
   const {
@@ -36,7 +37,8 @@ const DetailsCard = ({ service }) => {
        
       
         <div className="card-actions">
-          <Link to={`/service-details/${_id}`}><button className="borderStyle border-2 px-10 py-3 w-full  bg-slate-100"> Book Now</button></Link>
+          <button onClick={()=>document.getElementById('my_modal_3').showModal()} className="borderStyle border-2 px-10 py-3 w-full  bg-slate-100"> Book Now</button>
+          <BookingForm service={service} />
           {/* <Button text="Details"/> */}
         </div>
       </div>
