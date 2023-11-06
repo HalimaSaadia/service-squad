@@ -8,8 +8,9 @@ import Services from "../pages/Services/Services";
 import ServiceDetails from "../pages/ServiceDeatls/ServiceDetails/ServiceDetails";
 import axios from "axios";
 import useAxios from "../../Hooks/useAxios";
+import ManageServices from "../pages/MangeServices/ManageServices";
 
-const axiosInstance = useAxios()
+
 
 const router = createBrowserRouter([
     {
@@ -27,11 +28,15 @@ const router = createBrowserRouter([
             {
                 path: "/service-details/:id",
                 element: <ServiceDetails />,
-                loader:  ({params}) => axiosInstance.get(`/api/v1/service/${params.id}`)
+                loader:  ({params}) => axios.get(`http://localhost:5000/api/v1/service/${params.id}`, {withCredentials: true})
             },
             {
                 path: "/add-service",
                 element: <AddService />
+            },
+            {
+                path: "/my-services",
+                element: <ManageServices />,
             },
             {
                 path: "/login",
