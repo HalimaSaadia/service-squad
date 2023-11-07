@@ -1,16 +1,12 @@
 const BookingRow = ({ booking }) => {
   const {
-    _id,
     servicePhoto,
     serviceName,
     serviceTakingDate,
-    serviceArea,
-    providerPhoto,
-    providerName,
     price,
   } = booking;
   return (
-    <div className="card card-side rounded-none border  borderStyle bg-base-100 shadow-xl">
+    <div className="card card-side rounded-none border-b-2   borderStyle bg-base-100 shadow-xl">
       <figure className="w-1/3 ">
        
         <img src={servicePhoto} className="h-full" />

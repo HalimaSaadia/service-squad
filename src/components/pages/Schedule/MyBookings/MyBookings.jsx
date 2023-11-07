@@ -12,7 +12,7 @@ const MyBookings = () => {
     const {user} = useContext(AuthContext)
     const [bookings, setBookings] = useState([])
     useEffect(()=> {
-        axiosInstance.get(`/api/v1/my-bookings?email=${user?.email}`)
+        axiosInstance.get(`/api/v1/user-bookings?email=${user?.email}`)
         .then(res => {
             setBookings(res.data)
         })
