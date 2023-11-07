@@ -6,15 +6,17 @@ import PopularServices from "../PopularServices/PopularServices";
 import Contact from "../Contact/Contact";
 
 import FrequentlyAskedQuestion from "../FrequentlyAskedQuestion/FrequentlyAskedQuestion";
+import RewiewsContainer from "./ReveiwsContainer/RewiewsContainer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Slider />
       <div className="max-w-7xl mx-auto">
         <PopularServices />
-        <FrequentlyAskedQuestion/>
+        <RewiewsContainer />
        <Contact />
+       <FrequentlyAskedQuestion/>
       </div>
     </div>
   );
