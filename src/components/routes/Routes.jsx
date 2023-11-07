@@ -10,6 +10,7 @@ import axios from "axios";
 import useAxios from "../../Hooks/useAxios";
 import ManageServices from "../pages/MangeServices/ManageServices";
 import UpdateService from "../pages/UpdateService/UpdateService";
+import Schedule from "../pages/Schedule/Schedule/Schedule";
 
 
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: "/my-services",
                 element: <ManageServices />,
+            },
+            {
+                path: "/my-schedules",
+                element: <Schedule />
             },
             {
                 path: "/update-service/:id",

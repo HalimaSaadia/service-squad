@@ -31,8 +31,8 @@ const UserServiceCard = ({service}) => {
               <p>{providerName}</p>
             </div>
           </div>
-          <p className="">
-            {description}
+          <p className="flex-grow-0">
+            {description?.slice(0,50)}{description?.length > 50 ?"...": ""}
           </p>
           <p className="flex-grow-0">$:{price}</p>
           <p className=""><span className="font-bold">Service Area</span>:{serviceArea}</p>

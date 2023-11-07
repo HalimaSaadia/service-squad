@@ -4,9 +4,11 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import useAxios from "../../../../Hooks/useAxios";
 import toast, { ToastBar, Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const BookingForm = ({ service }) => {
   const axiosInstance = useAxios()
+  const navigate = useNavigate()
   const {
     _id,
     servicePhoto,
@@ -18,6 +20,7 @@ const BookingForm = ({ service }) => {
     email,
   } = service;
   const { user } = useContext(AuthContext);
+  const userEmail = user?.email
   
 
 
@@ -32,7 +35,7 @@ const BookingForm = ({ service }) => {
       serviceName,
       servicePhoto,
       providerEmail:email,
-      userEmail: user?.email,
+      userEmail,
       serviceTakingDate,
       instruction,
       price,
@@ -41,9 +44,13 @@ const BookingForm = ({ service }) => {
     axiosInstance.post("/api/v1/add-booking", bookedService)
     .then(res => {
 
-      toast.success("successFully booked")
+      Swal.fire({
+        icon: "success",
+        title: "Booked Successfully"
+      })
+      navigate("/")
       toast.remove(toastId)
-      console.log(res.data)
+      
     })
     .catch(error => {
       console.log(error.message)

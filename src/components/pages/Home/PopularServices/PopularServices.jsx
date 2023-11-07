@@ -17,7 +17,7 @@ const PopularServices = () => {
     .catch(err => {
       console.log(err.message)
     })
-  },[])
+  },[services])
   console.log(services)
   return (
     <div className="mb-10">
