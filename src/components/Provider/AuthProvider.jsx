@@ -59,7 +59,7 @@ const AuthProvider = ({children}) => {
         })
 
         return ()=> unSubscribe()
-    },[user])
+    },[])
 
     const value = {loading, user, createUser, updateUser, login, loginWithGoogle, logout}
     return (

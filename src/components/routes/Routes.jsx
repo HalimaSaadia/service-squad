@@ -11,6 +11,8 @@ import useAxios from "../../Hooks/useAxios";
 import ManageServices from "../pages/MangeServices/ManageServices";
 import UpdateService from "../pages/UpdateService/UpdateService";
 import Schedule from "../pages/Schedule/Schedule/Schedule";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 
@@ -18,6 +20,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -29,26 +32,27 @@ const router = createBrowserRouter([
             },
             {
                 path: "/service-details/:id",
-                element: <ServiceDetails />,
+                element: <PrivateRoute><ServiceDetails /></PrivateRoute>,
                 loader:  ({params}) => axios.get(`http://localhost:5000/api/v1/service/${params.id}`, {withCredentials: true})
             },
             {
                 path: "/add-service",
-                element: <AddService />
+                element: <PrivateRoute><AddService /></PrivateRoute>
             },
             {
                 path: "/my-services",
-                element: <ManageServices />,
+                element: <PrivateRoute><ManageServices /></PrivateRoute>,
             },
             {
                 path: "/my-schedules",
-                element: <Schedule />
+                element:<PrivateRoute> <Schedule /></PrivateRoute>
             },
             {
                 path: "/update-service/:id",
                 element: <UpdateService />,
                 loader: ({params}) => axios.get(`http://localhost:5000/api/v1/service/${params.id}`, {withCredentials: true})
             },
+           
             {
                 path: "/login",
                 element: <Login />
