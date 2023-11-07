@@ -47,9 +47,7 @@ const Services = () => {
         console.log(err.message);
       });
  
-    // const searchResult = services.filter(service => service.serviceName.toLowerCase().includes(search.toLowerCase()))
-   
-    // setDisplayServices(searchResult)
+ 
   }
 
 
