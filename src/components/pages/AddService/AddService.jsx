@@ -44,6 +44,7 @@ const AddService = () => {
             title: "Successfully added Service"
         })
         toast.remove(toastId)
+        setPhotoURL("https://media.istockphoto.com/id/673723668/photo/handsome-auto-service-workers.webp?b=1&s=170667a&w=0&k=20&c=kQ5lo8bZZd0eyGy__W_5m6yKzU1XzXhjXGJqfBeYC8w=")
     })
     .catch(error => {
         Swal.fire({

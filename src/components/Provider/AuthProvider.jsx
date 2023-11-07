@@ -43,7 +43,7 @@ const AuthProvider = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             const email = currentUser?.email || user?.email
             if(currentUser?.photoURL === null){
-                currentUser.photoURL = "https://images.unsplash.com/photo-1589652717406-1c69efaf1ff8?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0JTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D"
+                currentUser.photoURL = "https://media.istockphoto.com/id/1487995045/photo/3d-minimal-identity-verification-success-user-authentication-success-avatar-icon-with.webp?b=1&s=170667a&w=0&k=20&c=CqtvKd0C4KXun7yE6PDCLJL7pGpmyWutqDCYyVllVn0="
             }
             if(currentUser){
                 axiosInstance.post("/api/v1/jwt", {email})
