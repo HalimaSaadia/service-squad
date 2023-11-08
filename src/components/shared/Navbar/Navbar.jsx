@@ -89,12 +89,12 @@ const Navbar = () => {
                 </li> */}
               </ul>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center bg-transparent">
               {/* <img src="https://i.postimg.cc/XN8HCx5g/Untitled-design.png" alt="" /> */}
               <p className=" normal-case text-xl font-bold justify-center flex items-center gap-2">
                 <img
-                  className="w-8 md:w-12"
-                  src="https://i.postimg.cc/fTSZy7TM/money-9481647-removebg-preview.png"
+                  className="w-8 lg:w-12"
+                  src="https://i.postimg.cc/ry33nK5m/images-removebg-preview-1.png"
                   alt=""
                 />
                 ServiceSquad

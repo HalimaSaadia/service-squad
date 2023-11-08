@@ -61,8 +61,8 @@ const Contact = () => {
           <div className="form-control">
             <textarea
               type="text"
-              name="Enter Your Message"
-              placeholder="provider Name"
+              name=""
+              placeholder="Enter Your Message"
               className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none "
               required
               readOnly

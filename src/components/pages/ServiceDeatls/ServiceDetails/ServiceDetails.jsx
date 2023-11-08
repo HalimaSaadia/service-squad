@@ -47,7 +47,7 @@ const ServiceDetails = () => {
       <div className="grid w-full justify-center">
         <div className="avatar mx-auto py-0 mt-5">
           <div className="w-24 rounded-full">
-            <img src={user?.photoURL} />
+            <img src={loadedData?.providerPhoto} />
           </div>
         </div>
       </div>

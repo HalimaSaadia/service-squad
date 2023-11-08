@@ -22,6 +22,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    const toastId = toast.loading("LogIn In process..")
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
@@ -29,7 +30,8 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         toast.success("successfully Logged In");
-        navigate(location.state ? location.state : "/");
+        toast.remove(toastId)
+        navigate("/");
       })
       .catch((error) => {
         Swal.fire({
@@ -41,10 +43,12 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
+    const toastId = toast.loading("LogIn In process..")
     loginWithGoogle()
     .then(result => {
       toast.success("successfully Logged In");
-        navigate(location.state ? location.state : "/")
+       toast.remove(toastId)
+        navigate("/")
     })
     .catch((error) => {
       Swal.fire({
@@ -121,8 +125,8 @@ const Login = () => {
               </label>
             </div>
             <div>
-              <div className="flex justify-center space-x-5">
-                <FcGoogle  onClick={handleGoogleLogin} className="text-3xl cursor-pointer" />
+              <div className="flex justify-center items-center space-x-5 mb-5">
+                <span>Continue With</span><FcGoogle  onClick={handleGoogleLogin} className="text-3xl cursor-pointer" />
               </div>
             </div>
           </div>

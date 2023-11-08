@@ -1,0 +1,6 @@
+.slick-dots li button:before {
+    /* color: orange; */
+    background-image: linear-gradient(to bottom, #2B4D7A , #3F77B3, #73D5E2, #81E68A, #3F77B3 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

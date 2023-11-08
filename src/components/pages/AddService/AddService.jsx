@@ -9,12 +9,14 @@ import Swal from "sweetalert2";
 import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const AddService = () => {
-  dynamicTitle("add service - ServiceSquad")
-    const {user} = useContext(AuthContext)
- 
-    const [photoURL, setPhotoURL] = useState("https://media.istockphoto.com/id/673723668/photo/handsome-auto-service-workers.webp?b=1&s=170667a&w=0&k=20&c=kQ5lo8bZZd0eyGy__W_5m6yKzU1XzXhjXGJqfBeYC8w=")
-  
-    const axiosInstance = useAxios()
+  dynamicTitle("add service - ServiceSquad");
+  const { user } = useContext(AuthContext);
+
+  const [photoURL, setPhotoURL] = useState(
+    "https://media.istockphoto.com/id/673723668/photo/handsome-auto-service-workers.webp?b=1&s=170667a&w=0&k=20&c=kQ5lo8bZZd0eyGy__W_5m6yKzU1XzXhjXGJqfBeYC8w="
+  );
+
+  const axiosInstance = useAxios();
 
   const handleAddService = (e) => {
     e.preventDefault();
@@ -26,37 +28,40 @@ const AddService = () => {
     const price = e.target.price.value;
     const serviceArea = e.target.serviceArea.value;
     const description = e.target.description.value;
-    const providerPhoto = user?.photoURL
+    const providerPhoto = user?.photoURL;
     const service = {
-        servicePhoto,
-        serviceName,
-        providerName,
-        providerPhoto,
-        email,
-        price,
-        serviceArea,
-        description,
-    }
+      servicePhoto,
+      serviceName,
+      providerName,
+      providerPhoto,
+      email,
+      price,
+      serviceArea,
+      description,
+    };
     const toastId = toast.loading("Loading...");
-    axiosInstance.post("/api/vi/add-service", service)
-    .then(res => {
-        const result = res.data
+    axiosInstance
+      .post("/api/vi/add-service", service)
+      .then((res) => {
+        const result = res.data;
         Swal.fire({
-            icon: "success",
-            title: "Successfully added Service"
-        })
-        toast.remove(toastId)
-        setPhotoURL("https://media.istockphoto.com/id/673723668/photo/handsome-auto-service-workers.webp?b=1&s=170667a&w=0&k=20&c=kQ5lo8bZZd0eyGy__W_5m6yKzU1XzXhjXGJqfBeYC8w=")
-    })
-    .catch(error => {
+          icon: "success",
+          title: "Successfully added Service",
+        });
+        toast.remove(toastId);
+        setPhotoURL(
+          "https://media.istockphoto.com/id/673723668/photo/handsome-auto-service-workers.webp?b=1&s=170667a&w=0&k=20&c=kQ5lo8bZZd0eyGy__W_5m6yKzU1XzXhjXGJqfBeYC8w="
+        );
+      })
+      .catch((error) => {
         Swal.fire({
-            icon: "error",
-            title: "Ooops",
-            text: error.message
-        })
-    })
+          icon: "error",
+          title: "Ooops",
+          text: error.message,
+        });
+      });
 
-    form.reset()
+    form.reset();
   };
   return (
     <div className="py-10 max-w-6xl mx-auto ">
@@ -76,18 +81,17 @@ const AddService = () => {
           className="card-body p-0 lg:flex-1 bg-no-repeat bg-cover"
         >
           <div className="bg-[#1E293BEE] h-full w-full ">
-         
             <div className=" h-full p-0 flex flex-col justify-center items-center">
-            {/* <SectionHeading text="Add Service" /> */}
+              {/* <SectionHeading text="Add Service" /> */}
               <div className="card flex-shrink-0 md:w-[500px] ">
                 <form className="card-body" onSubmit={handleAddService}>
-                <div className="form-control">
+                  <div className="form-control">
                     <input
                       type="url"
                       placeholder="Photo URL"
                       name="servicePhoto"
                       className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
-                      onChange={(e)=> setPhotoURL(e.target.value)}
+                      onChange={(e) => setPhotoURL(e.target.value)}
                       required
                     />
                   </div>
@@ -149,7 +153,7 @@ const AddService = () => {
                       required
                     />
                   </div>
-                 
+
                   <div className="form-control mt-6">
                     <Button text="Add Service" />
                   </div>
