@@ -26,12 +26,12 @@ const UpdateService = () => {
   const axiosInstance = useAxios();
   const navigate = useNavigate()
 
-  const handleAddService = (e) => {
+  const handleUpdateService = (e) => {
     e.preventDefault();
     const form = e.target;
     const newServicePhoto = form.servicePhoto.value;
     const newServiceName = form.serviceName.value;
-    const newEmail = form.email.value;
+    const newEmail = user?.email;
     const newPrice = form.price.value;
     const newServiceArea = form.serviceArea.value;
     const newDescription = form.description.value;
@@ -100,7 +100,7 @@ const UpdateService = () => {
             <div className=" h-full p-0 flex flex-col justify-center items-center">
               {/* <SectionHeading text="Add Service" /> */}
               <div className="card flex-shrink-0 md:w-[500px] ">
-                <form className="card-body" onSubmit={handleAddService}>
+                <form className="card-body" onSubmit={handleUpdateService}>
                   <div className="form-control">
                     <input
                       type="url"
