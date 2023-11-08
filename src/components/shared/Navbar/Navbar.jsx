@@ -58,7 +58,7 @@ const Navbar = () => {
                   <NavLink to="/services">Services</NavLink>
                 </li>
 
-                <li>
+                {user && <li>
                   <NavLink to="#">Dashboard</NavLink>
                   <ul className="p-2">
                     <li>
@@ -71,7 +71,7 @@ const Navbar = () => {
                       <NavLink to="/my-schedules">My Schedules</NavLink>
                     </li>
                   </ul>
-                </li>
+                </li>}
                 {!user && <li><NavLink to="/login">Login</NavLink></li>}
                 {/* <li className="mt-5">
                   {user ? (
