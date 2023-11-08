@@ -3,8 +3,10 @@ import useAxios from "../../../Hooks/useAxios";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ManageServiceCard from "./ManageServiceCard";
 import SectionHeading from "../../shared/SectionHeading";
+import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const ManageServices = () => {
+  dynamicTitle("manage service - ServiceSquad")
   const [services, setServices] = useState([]);
   const axiosInstance = useAxios();
   const { user } = useContext(AuthContext);

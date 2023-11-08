@@ -5,8 +5,10 @@ import Swal from "sweetalert2";
 import useAxios from "../../../Hooks/useAxios";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const UpdateService = () => {
+  dynamicTitle("update service - ServiceSquad")
   const { data: loadedService } = useLoaderData();
   const {
     _id,

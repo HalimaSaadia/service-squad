@@ -11,8 +11,10 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const Login = () => {
+  dynamicTitle("Login - ServiceSquad")
   const [isOpen, setIsOpen] = useState(false);
   const { login, loginWithGoogle } = useContext(AuthContext);
 

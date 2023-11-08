@@ -6,8 +6,10 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import useAxios from "../../../Hooks/useAxios";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const AddService = () => {
+  dynamicTitle("add service - ServiceSquad")
     const {user} = useContext(AuthContext)
  
     const [photoURL, setPhotoURL] = useState("https://media.istockphoto.com/id/673723668/photo/handsome-auto-service-workers.webp?b=1&s=170667a&w=0&k=20&c=kQ5lo8bZZd0eyGy__W_5m6yKzU1XzXhjXGJqfBeYC8w=")

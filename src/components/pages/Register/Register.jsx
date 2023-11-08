@@ -10,8 +10,10 @@ import { Link, useNavigate} from "react-router-dom";
 import { AuthContext} from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const Register = () => {
+  dynamicTitle("registration - ServiceSquad")
   const [isOpen, setIsOpen] = useState(false);
   const { createUser, updateUser } = useContext(AuthContext);
 

@@ -4,8 +4,10 @@ import ServiceCard from "../../shared/ServiceCard/ServiceCard";
 import SectionHeading from "../../shared/SectionHeading";
 import Button from "../../shared/Button";
 import { FadeLoader } from "react-spinners";
+import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const Services = () => {
+  dynamicTitle("all services - ServiceSquad")
   const [services, setServices] = useState([]);
   const [displayServices, setDisplayServices] = useState(services)
   const [showAll, setShowAll] = useState(false);

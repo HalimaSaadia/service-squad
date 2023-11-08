@@ -91,7 +91,7 @@ const Navbar = () => {
             </div>
             <div>
               {/* <img src="https://i.postimg.cc/XN8HCx5g/Untitled-design.png" alt="" /> */}
-              <p className=" normal-case text-xl">ServiceSquad</p>
+              <p className=" normal-case text-xl flex items-center gap-2"><img className="w-12" src="https://i.postimg.cc/ry33nK5m/images-removebg-preview-1.png" alt="" />ServiceSquad</p>
             </div>
           </div>
           <div className="navbar-center hidden lg:flex">

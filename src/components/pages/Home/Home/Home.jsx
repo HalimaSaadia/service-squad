@@ -7,8 +7,10 @@ import Contact from "../Contact/Contact";
 
 import FrequentlyAskedQuestion from "../FrequentlyAskedQuestion/FrequentlyAskedQuestion";
 import RewiewsContainer from "./ReveiwsContainer/RewiewsContainer";
+import { dynamicTitle } from "../../../../utils/dynamicTitle";
 
 const Home = () => {
+  dynamicTitle("ServiceSquad")
   return (
     <div className="">
       <Slider />

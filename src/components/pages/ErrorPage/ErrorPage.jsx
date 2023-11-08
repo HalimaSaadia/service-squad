@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../../shared/Button";
+import { dynamicTitle } from "../../../utils/dynamicTitle";
 
 const ErrorPage = () => {
+  dynamicTitle("Not Found")
   return (
     <div
       
