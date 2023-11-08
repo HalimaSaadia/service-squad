@@ -48,7 +48,7 @@ const Reviews = () => {
     <div className="p-0">
      <SectionHeading text="Happy Client" />
       <Slider {...settings}>
-        <div className="borderStyle border h-64">
+        <div className="borderStyle border-t-0 border-b-0 border h-64">
           <div className=" flex justify-center mt-10 ">
             <div className="avatar  ">
               <div className="w-20 rounded-full ring  ring-offset-base-100 ring-offset-2">
@@ -65,7 +65,7 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-        <div className="borderStyle border h-64  grid justify-center items-center  ">
+        <div className="borderStyle border-t-0 border-b-0 border h-64  grid justify-center items-center  ">
           <div className=" flex justify-center mt-10">
             <div className="avatar  ">
               <div className="w-20 rounded-full ring  ring-offset-base-100 ring-offset-2">
@@ -82,7 +82,7 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-        <div className="borderStyle border h-64  grid justify-center items-center  ">
+        <div className="borderStyle border-t-0 border-b-0 border h-64  grid justify-center items-center  ">
           <div className=" flex justify-center mt-10">
             <div className="avatar  ">
               <div className="w-20 rounded-full ring  ring-offset-base-100 ring-offset-2">
@@ -99,7 +99,7 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-        <div className="borderStyle border h-64  grid justify-center items-center  ">
+        <div className="borderStyle border-t-0 border-b-0 border h-64  grid justify-center items-center  ">
           <div className=" flex justify-center mt-10">
             <div className="avatar  ">
               <div className="w-20 rounded-full ring  ring-offset-base-100 ring-offset-2">
@@ -116,7 +116,7 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-        <div className="borderStyle border h-64  grid justify-center items-center  ">
+        <div className="borderStyle border-t-0 border-b-0 border h-64  grid justify-center items-center  ">
           <div className=" flex justify-center mt-10">
             <div className="avatar  ">
               <div className="w-20 rounded-full ring  ring-offset-base-100 ring-offset-2">
@@ -133,7 +133,7 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-        <div className="borderStyle border h-64  grid justify-center items-center  ">
+        <div className="borderStyle border-t-0 border-b-0 border h-64  grid justify-center items-center  ">
           <div className=" flex justify-center mt-10">
             <div className="avatar  ">
               <div className="w-20 rounded-full ring  ring-offset-base-100 ring-offset-2">

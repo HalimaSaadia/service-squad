@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: "/service-details/:id",
                 element: <PrivateRoute><ServiceDetails /></PrivateRoute>,
-                // loader:  ({params}) => axios.get(`https://11-service-squade-server.vercel.app/api/v1/service/${params.id}`, {withCredentials: true})
+                // loader:  ({params}) => axios.get(`http://localhost:5000/api/v1/service/${params.id}`, {withCredentials: true})
             },
             {
                 path: "/add-service",
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path: "/update-service/:id",
                 element: <UpdateService />,
-                loader: ({params}) => axios.get(`https://11-service-squade-server.vercel.app/api/v1/service/${params.id}`, {withCredentials: true})
+                loader: ({params}) => axios.get(`http://localhost:5000/api/v1/service/${params.id}`, {withCredentials: true})
             },
            
             {

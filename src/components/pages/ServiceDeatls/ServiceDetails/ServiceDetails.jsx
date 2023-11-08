@@ -23,13 +23,13 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     axiosInstance
-      .post(`/api/v1/service/${id}?email=${loggedInUser}`)
+      .get(`/api/v1/service/${id}`)
       .then((res) => {
         setLoadedData(res.data)
       console.log(res.data)
       })
       .catch((err) => console.log(err.message));
-  }, [id, loadedData]);
+  }, [id]);
 
   useEffect(() => {
     axiosInstance
@@ -42,13 +42,13 @@ const ServiceDetails = () => {
         setProviderServices(remainingServices);
       })
       .catch((err) => console.log(err.message));
-  }, [id, loadedData]);
+  }, [loadedData,id]);
 
   return (
     <div className="max-w-7xl mx-auto">
       <div className="mb-10">
         <SectionHeading text={`${loadedData?.serviceName || "" }`} />
-        <DetailsCard service={loadedData} />
+       { <DetailsCard service={loadedData} />}
       </div>
 
       <div className="mb-10">

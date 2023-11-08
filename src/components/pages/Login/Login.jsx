@@ -122,7 +122,7 @@ const Login = () => {
             </div>
             <div>
               <div className="flex justify-center space-x-5">
-                <FcGoogle onClick={handleGoogleLogin} className="text-3xl" />
+                <FcGoogle  onClick={handleGoogleLogin} className="text-3xl cursor-pointer" />
               </div>
             </div>
           </div>

@@ -12,6 +12,7 @@ const DetailsCard = ({ service }) => {
     price,
     description,
   } = service;
+  console.log("details",service)
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl md:p-10 rounded-none   border-2 ">
       <figure className="lg:flex-1 ">
@@ -36,13 +37,13 @@ const DetailsCard = ({ service }) => {
         <div className="card-actions">
           <button
             onClick={() => document.getElementById("my_modal_3").showModal()}
-            className="borderStyle border-2 px-10 py-3 w-full  bg-slate-100"
+            className="borderStyle border-2 px-10 py-3 w-full  bg-base-100"
           >
             {" "}
             Book Now
           </button>
           
-          <BookingForm service={service} />
+          {service && <BookingForm service={service} />}
           {/* <Button text="Details"/> */}
         </div>
       </div>

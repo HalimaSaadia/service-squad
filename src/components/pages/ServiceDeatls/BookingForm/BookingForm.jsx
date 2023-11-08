@@ -19,8 +19,10 @@ const BookingForm = ({ service }) => {
     price,
     email,
   } = service;
+  // console.log("service",service.price)
+  
   const { user } = useContext(AuthContext);
-  const userEmail = user?.email
+  
   
 
 
@@ -29,6 +31,7 @@ const BookingForm = ({ service }) => {
     const form = e.target;
     const instruction = form.instruction.value;
     const serviceTakingDate = form.date.value;
+    const userEmail = user?.email
     const toastId = toast.loading("loading...")
 
     const bookedService = {
@@ -102,7 +105,7 @@ const BookingForm = ({ service }) => {
                       <input
                         type="email"
                         name="providerEmail"
-                        defaultValue={`Provider: ${email}`}
+                        defaultValue={email}
                         className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none "
                         required
                         readOnly
@@ -142,7 +145,7 @@ const BookingForm = ({ service }) => {
                     <div className="form-control">
                       <input
                         type="text"
-                        defaultValue={`Price: ${price}`}
+                        defaultValue={service.price}
                         name="price"
                         className="bg-transparent input input-bordered text-white border-0 border-b-2 rounded-none borderStyle focus:outline-none"
                         required

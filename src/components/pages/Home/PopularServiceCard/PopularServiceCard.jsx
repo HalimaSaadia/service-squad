@@ -34,7 +34,7 @@ const PopularServiceCard = ({service}) => {
        
 
         <div className="card-actions">
-          <Link to={`/service-details/${_id}`}><button className="borderStyle border-2 px-10 py-3   bg-slate-100"> Details</button></Link>
+          <Link to={`/service-details/${_id}`}><button className="borderStyle border-2 px-10 py-3   bg-base-100"> Details</button></Link>
           {/* <Button text="Details"/> */}
         </div>
       </div>

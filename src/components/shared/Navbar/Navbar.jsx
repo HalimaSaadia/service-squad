@@ -26,10 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div
-
-      className=" bg-no-repeat bg-cover sticky top-0 z-50  borderStyle border-b-2 navbarBackground "
-    >
+    <div className=" bg-no-repeat bg-cover sticky top-0 z-50  borderStyle border-b-2 bg-base-100 shadow-xl ">
       <div>
         <div className="navbar max-w-7xl mx-auto ">
           <div className="navbar-start">
@@ -60,7 +57,7 @@ const Navbar = () => {
                 <li>
                   <NavLink to="/services">Services</NavLink>
                 </li>
-             
+
                 <li>
                   <NavLink to="#">Dashboard</NavLink>
                   <ul className="p-2">
@@ -73,12 +70,15 @@ const Navbar = () => {
                     <li>
                       <NavLink to="/my-schedules">My Schedules</NavLink>
                     </li>
-
                   </ul>
                 </li>
-                <li className="mt-5">
-                  { user ? (
-                    <button onClick={()=> handleLogout()} className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
+                {!user && <li><NavLink to="/login">Login</NavLink></li>}
+                {/* <li className="mt-5">
+                  {user ? (
+                    <button
+                      onClick={() => handleLogout()}
+                      className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24"
+                    >
                       <NavLink className={(isActive) => "false"}>
                         <span className="text-white">Logout</span>
                       </NavLink>
@@ -86,12 +86,19 @@ const Navbar = () => {
                   ) : (
                     <NavLink to="/login">Login</NavLink>
                   )}
-                </li>
+                </li> */}
               </ul>
             </div>
-            <div>
+            <div className="flex justify-center">
               {/* <img src="https://i.postimg.cc/XN8HCx5g/Untitled-design.png" alt="" /> */}
-              <p className=" normal-case text-xl flex items-center gap-2"><img className="w-12" src="https://i.postimg.cc/ry33nK5m/images-removebg-preview-1.png" alt="" />ServiceSquad</p>
+              <p className=" normal-case text-xl font-bold justify-center flex items-center gap-2">
+                <img
+                  className="w-8 md:w-12"
+                  src="https://i.postimg.cc/fTSZy7TM/money-9481647-removebg-preview.png"
+                  alt=""
+                />
+                ServiceSquad
+              </p>
             </div>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -120,10 +127,14 @@ const Navbar = () => {
                   </details>
                 </li>
               )}
+              {!user && <li><NavLink to="/login">Login</NavLink></li>}
 
-              <li>
+              {/* <li>
                 {user ? (
-                  <button onClick={()=> handleLogout()} className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24">
+                  <button
+                    onClick={() => handleLogout()}
+                    className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24"
+                  >
                     {" "}
                     <NavLink to="#" className={(isActive) => "false"}>
                       <span className="text-white">Logout</span>
@@ -132,18 +143,45 @@ const Navbar = () => {
                 ) : (
                   <NavLink to="/login">Login</NavLink>
                 )}
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="navbar-end">
-            <div className="avatar">
-              <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                {user ? (
-                  <img src={user?.photoURL} />
-                ) : (
-                  <BiSolidUser className="text-[44px] text-gray-600" />
-                )}
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  {user ? (
+                    <img src={user?.photoURL} />
+                  ) : (
+                    <BiSolidUser className="text-[44px] text-gray-600" />
+                  )}
+                </div>
+              </label>
+              {user &&
+              <div style={{ backgroundImage: "url('https://svgshare.com/i/zHf.svg')" }} className="bg-no-repeat bg-cover">
+                 <ul
+                tabIndex={0}
+                className="mt-3 z-[1] cursor-text p-2 text-white  shadow menu menu-sm dropdown-content bg-[#1E293BEE] rounded space-y-3 "
+              >
+                <li className="border-b-2 borderStyle">
+                  <p className="justify-between hover:cursor-default hover:text-white">{user?.displayName}</p>
+                </li>
+                <li className="border-b-2 borderStyle hover:cursor-default hover:text-white">
+                  <p>{user?.email}</p>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleLogout()}
+                    className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24"
+                  >
+                    <NavLink className={(isActive) => "false"}>
+                      <span className="text-white">Logout</span>
+                    </NavLink>
+                  </button>
+                </li>
+              </ul>
               </div>
+              }
             </div>
           </div>
         </div>

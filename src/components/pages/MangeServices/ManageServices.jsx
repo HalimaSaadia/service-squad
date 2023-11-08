@@ -25,7 +25,7 @@ const ManageServices = () => {
 
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mb-10">
       <div className="grid justify-center my-10">
         <div className="avatar mx-auto">
           <div className="w-24 rounded-full">
