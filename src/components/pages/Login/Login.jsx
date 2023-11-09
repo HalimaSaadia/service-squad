@@ -64,9 +64,9 @@ const Login = () => {
   return (
     <div
       style={{ backgroundImage: "url('https://svgshare.com/i/zGu.svg')" }}
-      className="w-full min-h-screen bg-no-repeat bg-cover flex justify-center items-center"
+      className="w-full min-h-screen  bg-no-repeat bg-cover flex justify-center items-center"
     >
-      <div className="bg-[#1E293BCC] borderStyle border-4 relative mt-12 ">
+      <div className="bg-[#1E293BCC] borderStyle border-4 relative my-12 ">
         <div className="avatar absolute -top-12 left-[32%] md:left-[40%]">
           <div className="w-24 rounded-full ring bgPrimary ring-offset-base-100 ring-offset-2">
             <AiOutlineUser className="text-8xl text-[#1F2937]" />
