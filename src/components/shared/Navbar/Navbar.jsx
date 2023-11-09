@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <div className=" bg-no-repeat bg-cover sticky top-0 z-50  borderStyle border-b-2 bg-base-100 shadow-xl ">
       <div>
-        <div className="navbar max-w-7xl mx-auto ">
+        <div className="navbar max-w-7xl mx-auto px-0 md:px-5  lg:px-10 xl:px-0 ">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -129,25 +129,11 @@ const Navbar = () => {
               )}
               {!user && <li><NavLink to="/login">Login</NavLink></li>}
 
-              {/* <li>
-                {user ? (
-                  <button
-                    onClick={() => handleLogout()}
-                    className="bg-gradient-to-tr from-[#EE0D26] to-[#FBD32C] w-24"
-                  >
-                    {" "}
-                    <NavLink to="#" className={(isActive) => "false"}>
-                      <span className="text-white">Logout</span>
-                    </NavLink>
-                  </button>
-                ) : (
-                  <NavLink to="/login">Login</NavLink>
-                )}
-              </li> */}
+            
             </ul>
           </div>
-          <div className="navbar-end">
-            <div className="dropdown dropdown-end">
+          <div className="navbar-end  ">
+            <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   {user ? (
@@ -186,6 +172,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

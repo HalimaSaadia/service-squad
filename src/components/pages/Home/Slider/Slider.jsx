@@ -3,28 +3,29 @@ import { Typewriter } from "react-simple-typewriter";
 const Slider = () => {
   return (
     <div className="carousel w-full relative ">
-      <div id="slide1" className="carousel-item relative  h-[500px] md:h-[600px] w-full">
+      <div
+        id="slide1"
+        className="carousel-item relative  h-[400px] md:h-[600px] w-full"
+      >
         <div
-          className="hero  "
+          className="hero "
           style={{
             backgroundImage:
               "url(https://media.istockphoto.com/id/1316432905/photo/cleaning-home.webp?b=1&s=170667a&w=0&k=20&c=nnr5UkGpEkW7yM1jpJ1XJZ1V-yQiYJLE0ar9ViuTCjI=)",
           }}
         >
-          <div className="hero-overlay bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content">
-            <div className="text-white">
-             <h1 className="mb-5 text-2xl md:text-5xl font-bold">
+          <div className="hero-overlay bg-opacity-40"></div>
+          <div className="hero-content text-center relative  w-full h-full  items-start text-neutral-content">
+            <div className="text-white absolute top-1/3 ">
+              <h1 className="mb-5 text-2xl  md:text-5xl font-bold text-white">
                 <Typewriter
-                loop={false}
+                  loop={false}
                   typeSpeed={40}
                   words={[
-                    "Experience a spotless home without lifting a finger. Our cleaning services are thorough, reliable, and tailored to your needs",
+                    "Experience a spotless home without lifting a finger. Our cleaning services are tailored to your needs",
                   ]}
                 />
-              </h1> 
-              
-              
+              </h1>
             </div>
           </div>
         </div>
@@ -38,17 +39,17 @@ const Slider = () => {
           </a>
         </div>
       </div>
-      <div id="slide2" className="carousel-item relative w-full">
+      <div id="slide2" className="carousel-item relative h-[400px] md:h-[600px] w-full">
         <div
-          className="hero min-h-screen"
+          className="hero"
           style={{
             backgroundImage:
               "url(https://media.istockphoto.com/id/1410436592/photo/this-faucet-is-leaking-again.webp?b=1&s=170667a&w=0&k=20&c=8ghisMAnSK6H_tu3AH3ev8Qqorflv2jMsUsNEOdFogE=)",
           }}
         >
-          <div className="hero-overlay bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content">
-            <div className="text-white">
+          <div className="hero-overlay bg-opacity-60 "></div>
+          <div className="hero-content relative  w-full h-full border text-center text-neutral-content">
+            <div className="text-white absolute top-1/3">
               <h1 className="mb-5 text-2xl md:text-5xl font-bold">
                 <Typewriter
                   typeSpeed={40}
@@ -70,17 +71,17 @@ const Slider = () => {
           </a>
         </div>
       </div>
-      <div id="slide3" className="carousel-item relative w-full">
+      <div id="slide3" className="carousel-item relative h-[400px] md:h-[600px] w-full">
         <div
-          className="hero min-h-screen"
+          className="hero"
           style={{
             backgroundImage:
               "url(https://media.istockphoto.com/id/1327489339/photo/professional-landscaping-team-working-in-garden.webp?b=1&s=170667a&w=0&k=20&c=p3wc0flISKtHKAua3EWmF2oc-JrMyzYGS6BK9fITNnU=)",
           }}
         >
           <div className="hero-overlay bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content">
-            <div className="text-white">
+          <div className="hero-content relative  w-full h-full text-center text-neutral-content">
+            <div className="text-white absolute top-1/3">
               <h1 className="mb-5 text-2xl md:text-5xl font-bold">
                 <Typewriter
                   typeSpeed={40}

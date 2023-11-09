@@ -58,7 +58,7 @@ console.log(displayServices)
 
   return (
    
-    <div className="max-w-7xl mx-auto mb-10">
+    <div className="max-w-7xl mx-auto mb-10 px-5 md:px-10 xl:px-0">
       <SectionHeading text="All Services" />
       <div className="mb-5 ">
        <form onSubmit={handleSearch}>
@@ -66,7 +66,7 @@ console.log(displayServices)
           <div>
             <div>
               <input
-                className="input focus:outline-none join-item"
+                className="input focus:outline-none join-item w-48 md:w-auto"
                 placeholder="Search"
                 name="search"
                 type="text"

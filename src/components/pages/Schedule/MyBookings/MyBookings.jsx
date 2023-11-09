@@ -24,12 +24,17 @@ const MyBookings = () => {
     
     return (
         <div className="mb-10">
-            <div style={headingStyle} className="my-5 p-2 borderStyle border-b-2">
+            {
+                bookings?.length ?<><div style={headingStyle} className="my-5 p-2 borderStyle border-b-2">
                 <h1 className="text-4xl">My Bookings</h1>
             </div>
             <div className="space-y-5">
             {loading ? <FadeLoader loading={true} size={150} color="#3F51B5" aria-label="Loading Spinner" data-testid="loader" /> :bookings.map(booking =>  <BookingRow booking={booking} key={booking._id} />)}
+            </div></> : <div style={headingStyle} className="my-5 p-2 borderStyle border-b-2">
+                <h1 className="text-4xl">No Bookings</h1>
             </div>
+            }
+            
             
            
         </div>

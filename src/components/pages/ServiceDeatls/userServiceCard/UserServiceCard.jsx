@@ -18,7 +18,7 @@ const UserServiceCard = ({service}) => {
         <figure className="h-64">
           <img src={servicePhoto} className="w-full h-full  md:p-0" alt="Album" />
         </figure>
-        <div className="card-body lg:py-0 pl-0   pr-0">
+        <div className="card-body lg:py-0 pl-3 md:pl-0   pr-0">
           <h2 className="card-title font-bold md:text-3xl">{serviceName}</h2>
           <div className="flex  gap-2">
             <div className="avatar">

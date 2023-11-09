@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
    <div className="">
-    <SectionHeading text="Stay With Us" />
+    <SectionHeading text="Stay Connected" />
      <div className="grid grid-cols-1 md:grid-cols-2 space-y-5 md:space-y-0 gap-3 py-5 items-center md:-h-[500px] ">
       <div className=" h-[400px]">
         <h1 className="text-2xl md:text-4xl text-center md:text-start">Directions</h1>

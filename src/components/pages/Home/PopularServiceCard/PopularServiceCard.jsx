@@ -13,7 +13,7 @@ const PopularServiceCard = ({service}) => {
             alt="Album"
           />
       </figure>
-      <div className="card-body lg:flex-1 lg:py-2 pl-0 lg:pl-10">
+      <div className="card-body lg:flex-1 lg:py-2 pl-2 lg:pl-10">
         <h2 className="card-title font-bold">{serviceName}</h2>
         <div className="flex  gap-2">
           <div className="avatar">

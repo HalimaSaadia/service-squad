@@ -10,8 +10,8 @@ const Footer = () => {
       style={{ backgroundImage: "url('https://svgshare.com/i/zHf.svg')" }}
       className="bg-no-repeat bg-cover"
     >
-      <div>
-        <footer className="footer bg-[#1E293BEE] p-10 text-base-content">
+      <div className="bg-[#1E293BEE] px-5 md:px-10">
+        <footer className="footer max-w-7xl mx-auto py-5 md:py-10 text-base-content">
           <nav>
             <header className="textSecondary text-xl font-bold">
               Services
@@ -23,7 +23,7 @@ const Footer = () => {
           </nav>
           <nav>
             <header className="textSecondary text-xl font-bold">Contact</header>
-           
+
             <Link className="link link-hover text-base">
               <FcCallback className="text-lg inline mr-2" />
               019457689
@@ -36,8 +36,6 @@ const Footer = () => {
               <HiOutlineLocationMarker className="text-lg text-white  inline mr-2" />
               123 Main Street Apartment 4B Cityville, State 12345, United States
             </Link>
-
-       
           </nav>
           <nav>
             <header className="textSecondary text-xl font-bold">Apps</header>
@@ -47,9 +45,15 @@ const Footer = () => {
             <Link className="link link-hover">mac</Link>
           </nav>
         </footer>
-        <footer className="footer px-10 py-4 bg-[#1E293BFC] borderStyle border-t text-white border-base-300">
+      </div>
+      <div className="bg-[#17202efc] px-5 md:px-10 borderStyle border-t">
+        <footer className="footer max-w-7xl mx-auto py-4  text-white border-base-300">
           <aside className="items-center grid-flow-col">
-           <img className="w-16" src="https://i.postimg.cc/ry33nK5m/images-removebg-preview-1.png" alt="" />
+            <img
+              className="w-16"
+              src="https://i.postimg.cc/ry33nK5m/images-removebg-preview-1.png"
+              alt=""
+            />
             <p>
               ServiceSquad Industries Ltd. <br />
               <span>Copyright © 2023 - All right reserved</span>

@@ -18,7 +18,7 @@ const DetailsCard = ({ service }) => {
       <figure className="lg:flex-1 ">
         <img src={servicePhoto} className="w-full h-full  md:p-0" alt="Album" />
       </figure>
-      <div className="card-body lg:flex-1 lg:py-0 pl-0 lg:pl-10  pr-0">
+      <div className="card-body px-3 lg:flex-1 lg:py-0  lg:pl-10 ">
         <h2 className="card-title font-bold md:text-3xl">{serviceName}</h2>
         <div className="flex  gap-2">
           <div className="avatar">

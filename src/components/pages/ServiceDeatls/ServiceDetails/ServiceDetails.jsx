@@ -43,7 +43,7 @@ const ServiceDetails = () => {
   }, [loadedData, id]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-5 md:px-10 xl:px-0">
       <div className="grid w-full justify-center">
         <div className="avatar mx-auto py-0 mt-5">
           <div className="w-24 rounded-full">
@@ -63,7 +63,7 @@ const ServiceDetails = () => {
         {providerServices.length ? (
           <div>
             <SectionHeading text={`${loadedData.providerName}'s Services`} />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2  gap-5">
               {providerServices?.map((service) => (
                 <UserServiceCard key={service._id} service={service} />
               ))}

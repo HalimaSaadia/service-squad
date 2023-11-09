@@ -39,6 +39,7 @@ const Login = () => {
           title: "Oops...",
           text: error.message,
         });
+        toast.remove(toastId)
       });
   };
 
@@ -56,6 +57,7 @@ const Login = () => {
         title: "Oops...",
         text: error.message,
       });
+      toast.remove(toastId)
     });
   }
 

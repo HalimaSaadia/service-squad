@@ -64,7 +64,7 @@ const AddService = () => {
     form.reset();
   };
   return (
-    <div className="py-10 max-w-6xl mx-auto ">
+    <div className="py-10 max-w-7xl mx-auto px-5 md:px-10 xl:px-0">
       <div className="card lg:card-side  borderStyle border-4 bg-base-100 rounded-none  lg:h-[550px]">
         <figure className="lg:flex-1 relative">
           <img

@@ -7,8 +7,8 @@ const BookingRow = ({ booking }) => {
     price,
   } = booking;
   return (
-    <div className="card card-side rounded-none border-b-2 lg:border-l-2   borderStyle bg-base-100 shadow-xl">
-      <figure className="w-1/3 ">
+    <div className="card md:card-side rounded-none border-b-2 lg:border-l-2   borderStyle bg-base-100 shadow-xl">
+      <figure className="md:w-1/3 ">
        
         <img src={servicePhoto} className="h-full" />
       </figure>
