@@ -1,7 +1,7 @@
 * assignment_category_0002
 * Live Link: https://assignment11-e566e.web.app
 
-Some Features of my website
+Some key Features of my website
 
 - There is navbar for all page excluding the error page. Navbar contain homepage, all-services, and login for none logged in user. For logged in user navbar contain home page, all page, dashboard, logout button. Footer is also available for all pages except error page.
 
