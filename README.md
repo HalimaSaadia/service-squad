@@ -1,5 +1,5 @@
 * assignment_category_0002
-* Live Link: https://assignment11-e566e.web.app
+* Live Link: https://service-squad.netlify.app
 
 Some key Features of my website
 
